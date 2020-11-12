@@ -7,12 +7,7 @@ using CurrencyConverterLibreria;
 
 namespace CurrencyConverterLibreria
 {
-    public enum CurrencyType
-    {
-        US,
-        AUS,
-        UK,
-    }
+    
     public abstract class BaseCurrency
     {
         public abstract decimal InUS
@@ -27,6 +22,12 @@ namespace CurrencyConverterLibreria
         {
             get { return 1; }
         }
+
+        public override string ToString()
+        {
+            return "US$";
+        }
+
     }
 
     public class UKCurrency : BaseCurrency
@@ -35,6 +36,12 @@ namespace CurrencyConverterLibreria
         {
             get { return 0.5M; }
         }
+
+        public override string ToString()
+        {
+            return "UK£";
+        }
+
     }
 
     public class AUSCurrency : BaseCurrency
@@ -43,6 +50,12 @@ namespace CurrencyConverterLibreria
         {
             get { return 2; }
         }
+
+        public override string ToString()
+        {
+            return "AU$";
+        }
+
     }
 
     public class ConvertibleCurrency
